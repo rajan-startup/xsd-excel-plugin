@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://test.com/" targetNamespace="http://test.com/"
+	elementFormDefault="qualified">
+
+	<xsd:complexType name="LengthUnit">
+		<xsd:sequence>
+			<xsd:element name="unit" minOccurs="1" maxOccurs="1"
+				type="LengthUnitOfMeasure" />
+			<xsd:element name="measure" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal" />
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="LengthUnitOfMeasure">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Inches" />
+			<xsd:enumeration value="Feet" />
+			<xsd:enumeration value="Yards" />
+			<xsd:enumeration value="Meters" />
+			<xsd:enumeration value="Miles" />
+			<xsd:enumeration value="Millimeters" />
+			<xsd:enumeration value="Mil" />
+			<xsd:enumeration value="Centimeters" />
+			<xsd:enumeration value="Micrometers" />
+			<xsd:enumeration value="French" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>
